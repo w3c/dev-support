@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {{ page.title }} - W3C Developer Advocates
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ page.base }}style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div id="logo">
+        <a href="https://www.w3.org/"><img alt="W3C" src=
+        "https://www.w3.org/Icons/w3c_home"></a> 
+      </div>
+      <div id="top">
+        <h1>
+          W3C Developer Advocates
+        </h1>
+      </div>
+      <nav class="menu" id="menu">
+        <ul>
+          {% for item in site.data.pages.pages %}
+          {% assign absolute_url = "/" | append: item.url %}
+          {% assign isThisPage = false %}
+          {% if absolute_url == page.url %}
+          {% assign isThisPage = true %}
+          {% endif %}
+          {% if absolute_url == "/index.html" and page.url == "/" %}
+          {% assign isThisPage = true %}
+          {% endif %}
+        <li>
+          <a {% if isThisPage or page.parent == item.url %}class="active-tab" {% endif %}{% if isThisPage == false %}href="{{page.base }}{{ item.url }}"{% endif %}>{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        </ul>
+      </nav>
+      <h2>{{page.title}}</h2>
+    </header>
+    {{ content }}
+    <footer class="footer" id="footer">
+      <p>
+        W3C is proud to be an open and inclusive organization, focused on
+        productive discussions and actions. Our <a href=
+        "https://www.w3.org/Consortium/cepc/">Code of Ethics and Professional
+        Conduct</a> ensures that all voices can be heard.
+      </p>
+      <p>
+        Suggestions for improving these pages, such as fixing typos or
+        adding specific topics, can be made by opening a <a href=
+        "https://github.com/w3c/dev-support/">pull request on
+        GitHub</a>.
+      </p>
+    </footer>
+  </body>
+</html>

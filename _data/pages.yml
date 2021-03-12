@@ -1,0 +1,11 @@
+pages:
+- title: Overview of Program
+  url: index.html
+- title: GitHub Community Management
+  url: github.html
+- title: Browser Compata Data contributions
+  url: bcd.html
+- title: MDN contributions
+  url: mdn.html
+- title: StackOverflow monitoring
+  url: so.html
