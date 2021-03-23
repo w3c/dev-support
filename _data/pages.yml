@@ -3,7 +3,7 @@ pages:
   url: index.html
 - title: GitHub Community Management
   url: github.html
-- title: Browser Compata Data contributions
+- title: Browser Compat Data contributions
   url: bcd.html
 - title: MDN contributions
   url: mdn.html
